@@ -8,11 +8,13 @@ import { ScreenshotButton } from "../ScreenshotButton";
 interface FeedbackContentStepProps {
   feedbackType: FeedbackType;
   onFeedbackRestartRequest: () => void;
+  onFeedbackSent: () => void;
 }
 
 export function FeedbackContentStep({ 
   feedbackType, 
-  onFeedbackRestartRequest 
+  onFeedbackRestartRequest,
+  onFeedbackSent
 }: FeedbackContentStepProps) {
 
   const [screenshot, setScreenshot] = useState<string | null>(null);
@@ -28,6 +30,8 @@ export function FeedbackContentStep({
       screenshot,
       comment
     });
+
+    onFeedbackSent();
 
   }
 

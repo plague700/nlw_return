@@ -7,6 +7,7 @@ import bugImage from '../../assets/img/bug.svg';
 import ideaImage from '../../assets/img/idea.svg';
 import thoughtImage from '../../assets/img/thought.svg';
 import { FeedbackContentStep } from "./Steps/FeedbackContentStep";
+import { FeedbackSuccess } from "./Steps/FeedbackSuccess";
 
 export const feedbackTypes = {
   BUG: {
@@ -37,21 +38,32 @@ export type FeedbackType = keyof typeof feedbackTypes;
 export function WidgetForm () {
   
   const [feedbackType, setFeedbackType] = useState<FeedbackType | null>(null);
+  const [feedbackSent, setFeedbackSent] = useState(false);
 
   function handleRestartFeedback(){
+    setFeedbackSent(false);
     setFeedbackType(null);
   }
 
   return (
     <div className="bg-zinc-900 p-4 relative rounded-2xl mb-4 flex flex-col items-center shadow-lg w-[calc(100vw-2rem)] md:w-auto">
 
-      {!feedbackType ? (
-        <FeedbackTypeStep onFeedbackTypeChanged={setFeedbackType} />
-      ) : (
-        <FeedbackContentStep 
-          feedbackType={feedbackType}
+      { feedbackSent ? (
+        <FeedbackSuccess
           onFeedbackRestartRequest={handleRestartFeedback}
         />
+      ): (
+        <>
+          {!feedbackType ? (
+            <FeedbackTypeStep onFeedbackTypeChanged={setFeedbackType} />
+          ) : (
+            <FeedbackContentStep 
+              feedbackType={feedbackType}
+              onFeedbackRestartRequest={handleRestartFeedback}
+              onFeedbackSent={() => setFeedbackSent(true)}
+            />
+          )}
+        </>
       )}
 
       <footer className="text-xs text-neutral-400">
