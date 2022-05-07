@@ -18,6 +18,21 @@ export class SubmitFeedbackUseCase {
 
     const {type, comment, screenshot} = request;
 
+    // Trativa para tipo do feedback
+    if(!type){
+      throw new Error('Tipo é obrigatorio!');
+    }
+
+    // Trativa para tipo do comentario
+    if(!comment){
+      throw new Error('Comentario é obrigatorio!');
+    }
+
+    // Trativa para envio de imagem
+    if(screenshot && !screenshot.startsWith('data:image/png;base64')){
+      throw new Error('Formato de imagem inválido!');
+    }
+
     // Registro do feedback
     const feedback = await this.feedbacksRepository.create({
       type,
