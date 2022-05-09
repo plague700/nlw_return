@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1651940145332" clover="3.2.0">
-  <project timestamp="1651940145332" name="All files">
-    <metrics statements="50" coveredstatements="50" conditionals="7" coveredconditionals="7" methods="2" coveredmethods="2" elements="59" coveredelements="59" complexity="0" loc="50" ncloc="50" packages="1" files="1" classes="1"/>
+<coverage generated="1651945350876" clover="3.2.0">
+  <project timestamp="1651945350877" name="All files">
+    <metrics statements="58" coveredstatements="58" conditionals="7" coveredconditionals="7" methods="2" coveredmethods="2" elements="67" coveredelements="67" complexity="0" loc="58" ncloc="58" packages="1" files="1" classes="1"/>
     <file name="submit-feedback-use-case.ts" path="/home/marcus/Documentos/Code/nlw_return/server/src/use-cases/submit-feedback-use-case.ts">
-      <metrics statements="50" coveredstatements="50" conditionals="7" coveredconditionals="7" methods="2" coveredmethods="2"/>
+      <metrics statements="58" coveredstatements="58" conditionals="7" coveredconditionals="7" methods="2" coveredmethods="2"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
@@ -54,6 +54,14 @@
       <line num="48" count="1" type="stmt"/>
       <line num="49" count="1" type="stmt"/>
       <line num="50" count="1" type="stmt"/>
+      <line num="51" count="1" type="stmt"/>
+      <line num="52" count="1" type="stmt"/>
+      <line num="53" count="1" type="stmt"/>
+      <line num="54" count="1" type="stmt"/>
+      <line num="55" count="1" type="stmt"/>
+      <line num="56" count="1" type="stmt"/>
+      <line num="57" count="1" type="stmt"/>
+      <line num="58" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>

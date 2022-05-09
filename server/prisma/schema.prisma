@@ -5,8 +5,10 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// Provider pode rodar local sqlide
+
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
